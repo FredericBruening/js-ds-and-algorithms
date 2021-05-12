@@ -62,3 +62,14 @@ priorityQueue.enqueue('Jack', 1)
 priorityQueue.enqueue('Camila', 1)
 console.log("assert priority queue enqueues items in the correct priority: ", 'Jack' === priorityQueue.dequeue().item)
 
+
+/* CIRCULAR QUEUE */
+
+console.log("--- Testing Circular Queue with the Hot potato game ---")
+
+import CircularQueue from "./CircularQueue.js"
+const circularQueue = new CircularQueue()
+
+circularQueue.enqueue('John', 'Jack', 'Camila', 'Carl', 'Ingrid')
+console.log(circularQueue.hotPotato(2), 'is the winner')
+
