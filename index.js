@@ -1,10 +1,10 @@
 
 /* STACK */
 
-console.log("---Testing stack---")
+console.log("---Testing Stack---")
 
-import Stack from "./Stack.js";
-const stack = new Stack();
+import Stack from "./Stack.js"
+const stack = new Stack()
 
 console.log("assert stack is empty: ", true === stack.isEmpty())
 
@@ -22,9 +22,28 @@ console.log("assert stack pops the top items: ", ("5,1" === stack.print()))
 
 console.log("--- using Stack ---")
 
-import radixConverter from "./RadixConverter.js";
+import radixConverter from "./RadixConverter.js"
 
 console.log(radixConverter(10))
-console.log("assert radixConverter, converts to binary by default: ", "1010" === radixConverter(10));
-console.log("assert radixConverter converts octal: ", "20" === radixConverter(16, 8));
-console.log("assert radixConverter converts hexadecimal: ", "FF" === radixConverter(255, 16));
+console.log("assert radixConverter, converts to binary by default: ", "1010" === radixConverter(10))
+console.log("assert radixConverter converts octal: ", "20" === radixConverter(16, 8))
+console.log("assert radixConverter converts hexadecimal: ", "FF" === radixConverter(255, 16))
+
+
+/* QUEUE */
+
+console.log("--- Testing Queue ---")
+
+import Queue from "./Queue.js"
+const queue = new Queue()
+
+console.log("assert queue is empty: ", true === queue.isEmpty())
+
+queue.enqueue('John')
+console.log("assert queue can enqueue one item: ", 1 === queue.size())
+
+queue.enqueue('Jack', 'Jason')
+console.log("assert queue can enqueue multiple items: ", 3 === queue.size())
+console.log("assert queue is not empty: ", false === queue.isEmpty())
+
+console.log("assert queue can dequeue an item: ", 'John' === queue.dequeue() && 2 === queue.size())
