@@ -47,3 +47,18 @@ console.log("assert queue can enqueue multiple items: ", 3 === queue.size())
 console.log("assert queue is not empty: ", false === queue.isEmpty())
 
 console.log("assert queue can dequeue an item: ", 'John' === queue.dequeue() && 2 === queue.size())
+
+/* PRIORITY QUEUE */
+
+console.log("--- Testing Priority Queue ---")
+
+import PriorityQueue from "./PriorityQueue.js"
+const priorityQueue = new PriorityQueue()
+
+console.log("assert queue is empty: ", true === priorityQueue.isEmpty())
+
+priorityQueue.enqueue('John', 2)
+priorityQueue.enqueue('Jack', 1)
+priorityQueue.enqueue('Camila', 1)
+console.log("assert priority queue enqueues items in the correct priority: ", 'Jack' === priorityQueue.dequeue().item)
+
