@@ -1,5 +1,6 @@
-
-/* STACK */
+/**
+ * STACK
+ */
 
 console.log("---Testing Stack---")
 
@@ -30,7 +31,9 @@ console.log("assert radixConverter converts octal: ", "20" === radixConverter(16
 console.log("assert radixConverter converts hexadecimal: ", "FF" === radixConverter(255, 16))
 
 
-/* QUEUE */
+/**
+ * QUEUE
+ */
 
 console.log("--- Testing Queue ---")
 
@@ -72,4 +75,32 @@ const circularQueue = new CircularQueue()
 
 circularQueue.enqueue('John', 'Jack', 'Camila', 'Carl', 'Ingrid')
 console.log(circularQueue.hotPotato(2), 'is the winner')
+
+
+/**
+* LINKED LIST
+*/
+
+console.log("--- Testing LinkedList ---")
+
+import LinkedList from "./LinkedList.js"
+const linkedList = new LinkedList()
+
+linkedList.append(1)
+
+console.log("assert the LinkedList can append an element: ", linkedList.size() === 1)
+console.log("assert the LinkedList can remove the first element: ", linkedList.removeAt(0) === 1)
+
+linkedList.append(1)
+linkedList.append(2)
+linkedList.append(3)
+console.log("assert the LinkedList can remove the third element: ", linkedList.removeAt(2) === 3)
+
+console.log("assert the LinkedList can insert an element at a specified position: ",
+    linkedList.insert(2, 4) === true &&
+    linkedList.size() === 3
+)
+
+console.log("assert the LinkedList gives the index of an existing element: ", linkedList.indexOf(4) === 2)
+console.log("assert the LinkedList can remove an element: ", linkedList.remove(4) === 4 && linkedList.size() === 2)
 
