@@ -66,7 +66,9 @@ priorityQueue.enqueue('Camila', 1)
 console.log("assert priority queue enqueues items in the correct priority: ", 'Jack' === priorityQueue.dequeue().item)
 
 
-/* CIRCULAR QUEUE */
+/**
+ * CIRCULAR QUEUE
+ */
 
 console.log("--- Testing Circular Queue with the Hot potato game ---")
 
@@ -78,8 +80,8 @@ console.log(circularQueue.hotPotato(2), 'is the winner')
 
 
 /**
-* LINKED LIST
-*/
+ * LINKED LIST
+ */
 
 console.log("--- Testing LinkedList ---")
 
@@ -104,3 +106,23 @@ console.log("assert the LinkedList can insert an element at a specified position
 console.log("assert the LinkedList gives the index of an existing element: ", linkedList.indexOf(4) === 2)
 console.log("assert the LinkedList can remove an element: ", linkedList.remove(4) === 4 && linkedList.size() === 2)
 
+
+
+/**
+ * DOUBLY LINKED LIST
+ */
+
+console.log("--- Testing LinkedList ---")
+
+import DoublyLinkedList from "./DoublyLinkedList.js"
+const doublyLinkedList = new DoublyLinkedList()
+
+doublyLinkedList.append(1)
+doublyLinkedList.append(2)
+doublyLinkedList.append(3)
+
+console.log("assert doublyLinkedList can append elements: ", doublyLinkedList.size() === 3)
+doublyLinkedList.insert(1, 10)
+console.log("assert doublyLinkedList can insert element at any position: ", doublyLinkedList.size() === 4 && doublyLinkedList.indexOf(10) === 1)
+console.log("assert doublyLinkedList can remove element at any position: ", doublyLinkedList.removeAt(1) === 10)
+console.log("assert doublyLinkedList has a tail: ", doublyLinkedList.tail.element === 3)
